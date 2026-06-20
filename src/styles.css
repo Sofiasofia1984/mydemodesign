@@ -4,28 +4,11 @@
 
 @custom-variant dark (&:is(.dark *));
 
-/*
- * Design system definition.
- *
- * The @theme inline block maps CSS custom properties to Tailwind utility
- * classes (e.g. --color-primary -> bg-primary, text-primary).
- *
- * The :root and .dark blocks define the actual color values using oklch.
- * All colors MUST use oklch format.
- *
- * To add a new semantic color:
- * 1. Add the variable to :root (light value) and .dark (dark value)
- * 2. Register it in @theme inline as --color-<name>: var(--<name>)
- */
-
 @theme inline {
   --radius-sm: calc(var(--radius) - 4px);
   --radius-md: calc(var(--radius) - 2px);
   --radius-lg: var(--radius);
   --radius-xl: calc(var(--radius) + 4px);
-  --radius-2xl: calc(var(--radius) + 8px);
-  --radius-3xl: calc(var(--radius) + 12px);
-  --radius-4xl: calc(var(--radius) + 16px);
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --color-card: var(--card);
@@ -45,122 +28,147 @@
   --color-border: var(--border);
   --color-input: var(--input);
   --color-ring: var(--ring);
-  --color-ring-offset-background: var(--background);
-  --color-chart-1: var(--chart-1);
-  --color-chart-2: var(--chart-2);
-  --color-chart-3: var(--chart-3);
-  --color-chart-4: var(--chart-4);
-  --color-chart-5: var(--chart-5);
-  --color-sidebar: var(--sidebar);
-  --color-sidebar-foreground: var(--sidebar-foreground);
-  --color-sidebar-primary: var(--sidebar-primary);
-  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
-  --color-sidebar-accent: var(--sidebar-accent);
-  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
-  --color-sidebar-border: var(--sidebar-border);
-  --color-sidebar-ring: var(--sidebar-ring);
 }
 
 :root {
   --radius: 0.625rem;
-  --background: oklch(1 0 0);
-  --foreground: oklch(0.129 0.042 264.695);
-  --card: oklch(1 0 0);
-  --card-foreground: oklch(0.129 0.042 264.695);
-  --popover: oklch(1 0 0);
-  --popover-foreground: oklch(0.129 0.042 264.695);
-  --primary: oklch(0.208 0.042 265.755);
-  --primary-foreground: oklch(0.984 0.003 247.858);
-  --secondary: oklch(0.968 0.007 247.896);
-  --secondary-foreground: oklch(0.208 0.042 265.755);
-  --muted: oklch(0.968 0.007 247.896);
-  --muted-foreground: oklch(0.554 0.046 257.417);
-  --accent: oklch(0.968 0.007 247.896);
-  --accent-foreground: oklch(0.208 0.042 265.755);
+  --background: oklch(0.96 0.018 50);
+  --foreground: oklch(0.25 0.022 40);
+  --card: oklch(0.985 0.012 60);
+  --card-foreground: oklch(0.25 0.022 40);
+  --popover: oklch(0.985 0.012 60);
+  --popover-foreground: oklch(0.25 0.022 40);
+  --primary: oklch(0.30 0.020 40);
+  --primary-foreground: oklch(0.985 0.012 60);
+  --secondary: oklch(0.92 0.025 50);
+  --secondary-foreground: oklch(0.30 0.020 40);
+  --muted: oklch(0.92 0.025 50);
+  --muted-foreground: oklch(0.45 0.030 40);
+  --accent: oklch(0.75 0.060 45);
+  --accent-foreground: oklch(0.30 0.020 40);
   --destructive: oklch(0.577 0.245 27.325);
-  --destructive-foreground: oklch(0.984 0.003 247.858);
-  --border: oklch(0.929 0.013 255.508);
-  --input: oklch(0.929 0.013 255.508);
-  --ring: oklch(0.704 0.04 256.788);
-  --chart-1: oklch(0.646 0.222 41.116);
-  --chart-2: oklch(0.6 0.118 184.704);
-  --chart-3: oklch(0.398 0.07 227.392);
-  --chart-4: oklch(0.828 0.189 84.429);
-  --chart-5: oklch(0.769 0.188 70.08);
-  --sidebar: oklch(0.984 0.003 247.858);
-  --sidebar-foreground: oklch(0.129 0.042 264.695);
-  --sidebar-primary: oklch(0.208 0.042 265.755);
-  --sidebar-primary-foreground: oklch(0.984 0.003 247.858);
-  --sidebar-accent: oklch(0.968 0.007 247.896);
-  --sidebar-accent-foreground: oklch(0.208 0.042 265.755);
-  --sidebar-border: oklch(0.929 0.013 255.508);
-  --sidebar-ring: oklch(0.704 0.04 256.788);
+  --destructive-foreground: oklch(0.985 0.012 60);
+  --border: oklch(0.88 0.025 50);
+  --input: oklch(0.88 0.025 50);
+  --ring: oklch(0.70 0.060 45);
 }
 
-.dark {
-  --background: oklch(0.129 0.042 264.695);
-  --foreground: oklch(0.984 0.003 247.858);
-  --card: oklch(0.208 0.042 265.755);
-  --card-foreground: oklch(0.984 0.003 247.858);
-  --popover: oklch(0.208 0.042 265.755);
-  --popover-foreground: oklch(0.984 0.003 247.858);
-  --primary: oklch(0.929 0.013 255.508);
-  --primary-foreground: oklch(0.208 0.042 265.755);
-  --secondary: oklch(0.279 0.041 260.031);
-  --secondary-foreground: oklch(0.984 0.003 247.858);
-  --muted: oklch(0.279 0.041 260.031);
-  --muted-foreground: oklch(0.704 0.04 256.788);
-  --accent: oklch(0.279 0.041 260.031);
-  --accent-foreground: oklch(0.984 0.003 247.858);
-  --destructive: oklch(0.704 0.191 22.216);
-  --destructive-foreground: oklch(0.984 0.003 247.858);
-  --border: oklch(1 0 0 / 10%);
-  --input: oklch(1 0 0 / 15%);
-  --ring: oklch(0.551 0.027 264.364);
-  --chart-1: oklch(0.488 0.243 264.376);
-  --chart-2: oklch(0.696 0.17 162.48);
-  --chart-3: oklch(0.769 0.188 70.08);
-  --chart-4: oklch(0.627 0.265 303.9);
-  --chart-5: oklch(0.645 0.246 16.439);
-  --sidebar: oklch(0.208 0.042 265.755);
-  --sidebar-foreground: oklch(0.984 0.003 247.858);
-  --sidebar-primary: oklch(0.488 0.243 264.376);
-  --sidebar-primary-foreground: oklch(0.984 0.003 247.858);
-  --sidebar-accent: oklch(0.279 0.041 260.031);
-  --sidebar-accent-foreground: oklch(0.984 0.003 247.858);
-  --sidebar-border: oklch(1 0 0 / 10%);
-  --sidebar-ring: oklch(0.551 0.027 264.364);
+/* =========================================
+   SOFY WEB DESIGN — design tokens & UI
+   ========================================= */
+:root {
+  --bg: #F5E9E2;
+  --bg-soft: #FAF1EB;
+  --bg-warm: #EFD9CB;
+  --ink: #2A211D;
+  --ink-soft: #5C4A41;
+  --line: #E1CFC2;
+  --rose: #C9A18B;
+  --rose-deep: #B0856E;
+  --cacao: #8B6F5C;
+  --cacao-deep: #6A5346;
+  --espresso: #3A2E2A;
+  --cream: #FBF6F1;
+
+  --radius-s: 6px;
+  --radius-m: 14px;
+  --radius-l: 28px;
+  --radius-pill: 999px;
+
+  --shadow-s: 0 1px 2px rgba(58,46,42,0.04), 0 4px 14px rgba(58,46,42,0.05);
+  --shadow-m: 0 2px 8px rgba(58,46,42,0.06), 0 18px 48px rgba(58,46,42,0.08);
+
+  --ff-sans: "Montserrat", system-ui, -apple-system, "Helvetica Neue", Arial, sans-serif;
+  --ff-serif: "Cormorant Garamond", Georgia, "Times New Roman", serif;
 }
 
-@theme {
-  --font-display: "Anton", sans-serif;
-  --font-sans: "Inter", sans-serif;
-  --font-mono: "JetBrains Mono", monospace;
-  --color-wp-bg: hsl(230 15% 4%);
-  --color-wp-fg: hsl(230 10% 98%);
-  --color-wp-muted: hsl(230 10% 70%);
-  --color-wp-primary: hsl(199 100% 55%);
-  --color-wp-border: hsl(230 10% 98% / 0.12);
-  --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+html, body {
+  margin: 0; padding: 0;
+  background: var(--bg);
+  color: var(--ink);
+  font-family: var(--ff-sans);
+  font-weight: 400;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
 }
+.sofy a { color: inherit; text-decoration: none; }
+.sofy img { max-width: 100%; display: block; }
 
-@keyframes wp-slide-up {
-  from { opacity: 0; transform: translateY(30px); }
-  to { opacity: 1; transform: translateY(0); }
-}
+/* typography */
+.sofy .eyebrow { font-size: 11px; font-weight: 500; letter-spacing: 0.22em; text-transform: uppercase; color: var(--cacao); }
+.sofy .h-display { font-family: var(--ff-serif); font-weight: 400; font-size: clamp(44px, 6.4vw, 96px); line-height: 1.02; letter-spacing: -0.01em; color: var(--espresso); margin: 0; }
+.sofy .h-display em { font-style: italic; color: var(--rose-deep); }
+.sofy .h-1 { font-family: var(--ff-serif); font-weight: 400; font-size: clamp(36px, 4.4vw, 64px); line-height: 1.06; color: var(--espresso); margin: 0; }
+.sofy .h-1 em { font-style: italic; color: var(--rose-deep); }
+.sofy .h-2 { font-family: var(--ff-serif); font-weight: 400; font-size: clamp(28px, 3vw, 44px); line-height: 1.12; color: var(--espresso); margin: 0; }
+.sofy .h-2 em { font-style: italic; color: var(--rose-deep); }
+.sofy .h-3 { font-size: 18px; font-weight: 600; color: var(--espresso); margin: 0; }
+.sofy .lead { font-size: clamp(16px, 1.2vw, 19px); line-height: 1.6; color: var(--ink-soft); margin: 0; text-wrap: pretty; }
+.sofy .body { font-size: 15px; line-height: 1.65; color: var(--ink-soft); }
 
-.animate-reveal {
-  animation: wp-slide-up 0.8s var(--ease-out-expo) both;
-}
+/* layout */
+.sofy .container { max-width: 1240px; margin: 0 auto; padding: 0 40px; }
+.sofy .section { padding: 120px 0; }
 
-@layer base {
-  * {
-    border-color: var(--color-border);
-  }
+/* nav */
+.sofy .nav { position: sticky; top: 0; z-index: 50; background: rgba(245,233,226,0.82); backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px); border-bottom: 1px solid rgba(225,207,194,0.6); }
+.sofy .nav-inner { display: flex; align-items: center; justify-content: space-between; height: 76px; }
+.sofy .brand { display: flex; align-items: center; gap: 10px; font-family: var(--ff-serif); font-size: 22px; color: var(--espresso); }
+.sofy .brand-mark { width: 30px; height: 30px; border-radius: 50%; background: linear-gradient(135deg, var(--rose) 0%, var(--cacao) 100%); display: grid; place-items: center; color: var(--cream); font-family: var(--ff-serif); font-style: italic; font-size: 16px; }
+.sofy .brand em { font-style: italic; color: var(--rose-deep); }
+.sofy .nav-links { display: flex; gap: 36px; font-size: 13px; font-weight: 500; }
+.sofy .nav-links a { color: var(--ink-soft); position: relative; padding: 6px 0; transition: color 0.2s ease; }
+.sofy .nav-links a:hover { color: var(--espresso); }
+.sofy .nav-links a.active { color: var(--espresso); }
+.sofy .nav-links a.active::after { content: ""; position: absolute; left: 0; right: 0; bottom: -2px; height: 1px; background: var(--rose-deep); }
 
-  body {
-    background-color: var(--color-background);
-    color: var(--color-foreground);
-    font-family: var(--font-sans);
-  }
+/* buttons */
+.sofy .btn { display: inline-flex; align-items: center; gap: 10px; height: 52px; padding: 0 28px; border-radius: var(--radius-pill); font-size: 13px; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; border: 1px solid transparent; transition: transform 0.18s ease, background 0.18s ease, color 0.18s ease; cursor: pointer; white-space: nowrap; }
+.sofy .btn:hover { transform: translateY(-1px); }
+.sofy .btn-primary { background: var(--espresso); color: var(--cream); }
+.sofy .btn-primary:hover { background: var(--cacao-deep); }
+.sofy .btn-ghost { background: transparent; color: var(--espresso); border-color: var(--espresso); }
+.sofy .btn-ghost:hover { background: var(--espresso); color: var(--cream); }
+.sofy .btn-soft { background: var(--cream); color: var(--espresso); border-color: var(--line); }
+.sofy .btn-arrow::after { content: "→"; font-size: 14px; }
+
+.sofy .tag { display: inline-flex; align-items: center; gap: 8px; padding: 7px 14px; border-radius: var(--radius-pill); background: var(--cream); border: 1px solid var(--line); font-size: 12px; color: var(--cacao-deep); }
+.sofy .tag .dot { width: 6px; height: 6px; border-radius: 50%; background: var(--rose-deep); }
+
+/* animations */
+@keyframes sofy-fadeUp { from { opacity: 0; transform: translateY(24px); } to { opacity: 1; transform: translateY(0); } }
+.sofy .hero-anim > * { animation: sofy-fadeUp 0.9s cubic-bezier(0.2,0.7,0.3,1) both; }
+.sofy .hero-anim > *:nth-child(1) { animation-delay: 0.05s; }
+.sofy .hero-anim > *:nth-child(2) { animation-delay: 0.18s; }
+.sofy .hero-anim > *:nth-child(3) { animation-delay: 0.32s; }
+.sofy .hero-anim > *:nth-child(4) { animation-delay: 0.46s; }
+.sofy .hero-anim > *:nth-child(5) { animation-delay: 0.60s; }
+.sofy .hero-anim > *:nth-child(6) { animation-delay: 0.74s; }
+.sofy .reveal { animation: sofy-fadeUp 0.9s cubic-bezier(0.2,0.7,0.3,1) both; }
+.sofy .reveal.d1 { animation-delay: 0.1s; }
+.sofy .reveal.d2 { animation-delay: 0.2s; }
+.sofy .reveal.d3 { animation-delay: 0.3s; }
+.sofy .reveal.d4 { animation-delay: 0.4s; }
+
+/* photo */
+.sofy .ph { position: relative; background-color: var(--bg-warm); background-size: cover; background-position: center; border: 1px solid var(--line); border-radius: var(--radius-m); overflow: hidden; }
+.sofy .ph::after { content: ""; position: absolute; inset: 0; background: linear-gradient(180deg, rgba(58,46,42,0) 55%, rgba(58,46,42,0.15) 100%); pointer-events: none; }
+
+/* row util */
+.sofy .row { display: flex; gap: 16px; align-items: center; flex-wrap: wrap; }
+
+/* footer */
+.sofy .footer { background: var(--espresso); color: #D9CDC4; padding: 80px 0 40px; }
+.sofy .footer .brand, .sofy .footer .brand em { color: var(--cream); }
+.sofy .footer-grid { display: grid; grid-template-columns: 1.4fr 1fr 1fr 1fr; gap: 48px; padding-bottom: 56px; border-bottom: 1px solid rgba(217,205,196,0.18); }
+.sofy .footer h4 { font-size: 12px; letter-spacing: 0.18em; text-transform: uppercase; color: #FBF6F1; margin: 0 0 18px; font-weight: 600; }
+.sofy .footer ul { list-style: none; padding: 0; margin: 0; }
+.sofy .footer li { margin-bottom: 10px; font-size: 14px; }
+.sofy .footer li a:hover { color: var(--cream); }
+.sofy .footer-bottom { display: flex; justify-content: space-between; align-items: center; padding-top: 32px; font-size: 12px; color: rgba(217,205,196,0.8); }
+
+@media (max-width: 860px) {
+  .sofy .container { padding: 0 24px; }
+  .sofy .nav-links { display: none; }
+  .sofy .footer-grid { grid-template-columns: 1fr 1fr; }
 }
