@@ -46,7 +46,7 @@ function PrenotazionePage() {
           {/* LEFT */}
           <div className="hero-anim" style={{ position: "sticky", top: 100 }}>
             <span className="eyebrow">Prenotazione</span>
-            <h1 className="h-display" style={{ marginTop: 20 }}>Iniziamo<br />con un <em>caffè</em>.</h1>
+            <h1 className="h-display" style={{ marginTop: 20 }}>Iniziamo con un <em>caffè</em>.</h1>
             <p className="lead" style={{ marginTop: 24, maxWidth: 460 }}>
               Compila il form: ti richiamo entro 24 ore lavorative per fissare una call gratuita di 30 minuti, capire il tuo progetto e — se ha senso lavorare insieme — prepararti un preventivo scritto.
             </p>
