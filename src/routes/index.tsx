@@ -227,7 +227,7 @@ function HomePage() {
       <section style={{ padding: "140px 0", textAlign: "center", background: "radial-gradient(ellipse at 50% 20%, rgba(201,161,139,0.35), transparent 60%), var(--bg)" }}>
         <div className="container">
           <span className="eyebrow">Pronta a partire?</span>
-          <h2 className="h-display" style={{ marginTop: 18, maxWidth: 900, marginLeft: "auto", marginRight: "auto" }}>Costruiamo insieme<br />il sito <em>che meriti.</em></h2>
+          <h2 className="h-display" style={{ marginTop: 18, maxWidth: 900, marginLeft: "auto", marginRight: "auto" }}>Costruiamo insieme il sito <em>che meriti.</em></h2>
           <p className="lead" style={{ maxWidth: 580, margin: "28px auto 0" }}>La prima call è gratuita, dura 30 minuti, e da lì capiamo se ha senso lavorare insieme. Senza impegno, senza vendita aggressiva.</p>
           <div className="row" style={{ justifyContent: "center", marginTop: 40 }}>
             <Link to="/prenotazione" className="btn btn-primary btn-arrow">Prenota la tua call</Link>
