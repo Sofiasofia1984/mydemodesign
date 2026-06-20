@@ -63,8 +63,8 @@ export function Footer() {
           <div>
             <h4>Contatti</h4>
             <ul>
-              <li>ciao@sofywebdesign.it</li>
-              <li>+39 ___ ___ ____</li>
+              <li><a href="mailto:sofisofi10123@gmail.com">sofisofi10123@gmail.com</a></li>
+              <li><a href="tel:+393501646712">+39 350 164 6712</a></li>
               <li>Instagram · @sofywebdesign</li>
             </ul>
           </div>
