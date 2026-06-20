@@ -132,6 +132,27 @@
   --sidebar-ring: oklch(0.551 0.027 264.364);
 }
 
+@theme {
+  --font-display: "Anton", sans-serif;
+  --font-sans: "Inter", sans-serif;
+  --font-mono: "JetBrains Mono", monospace;
+  --color-wp-bg: hsl(230 15% 4%);
+  --color-wp-fg: hsl(230 10% 98%);
+  --color-wp-muted: hsl(230 10% 70%);
+  --color-wp-primary: hsl(199 100% 55%);
+  --color-wp-border: hsl(230 10% 98% / 0.12);
+  --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+@keyframes wp-slide-up {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.animate-reveal {
+  animation: wp-slide-up 0.8s var(--ease-out-expo) both;
+}
+
 @layer base {
   * {
     border-color: var(--color-border);
@@ -140,5 +161,6 @@
   body {
     background-color: var(--color-background);
     color: var(--color-foreground);
+    font-family: var(--font-sans);
   }
 }
