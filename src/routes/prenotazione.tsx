@@ -83,8 +83,8 @@ function PrenotazionePage() {
               <span style={{ width: 22, height: 22, borderRadius: "50%", background: "var(--rose)", color: "var(--cream)", display: "grid", placeItems: "center", fontSize: 11, fontWeight: 600, letterSpacing: 0 }}>1</span>
               Richiesta progetto · 2 minuti
             </span>
-            <h3 style={{ fontFamily: "var(--ff-serif)", fontWeight: 400, fontSize: 32, lineHeight: 1.15, color: "var(--espresso)", margin: "0 0 8px" }}>
-              Raccontami <em style={{ color: "var(--rose-deep)", fontStyle: "italic" }}>chi sei</em><br />e cosa ti serve.
+            <h3 style={{ fontFamily: "var(--ff-serif)", fontWeight: 400, fontSize: "clamp(24px, 2.4vw, 30px)", lineHeight: 1.2, color: "var(--espresso)", margin: "0 0 8px", textWrap: "balance" }}>
+              Raccontami <em style={{ color: "var(--rose-deep)", fontStyle: "italic" }}>chi sei</em> e cosa ti serve.
             </h3>
             <p style={{ fontSize: 14, color: "var(--ink-soft)", margin: "0 0 32px" }}>Tre informazioni e abbiamo iniziato. Tutto il resto lo vediamo insieme in call.</p>
 
