@@ -1,218 +1,242 @@
-import { createFileRoute } from "@tanstack/react-router";
-import nordicForm from "@/assets/project-nordic-form.jpg";
-import pulse from "@/assets/project-pulse.jpg";
+import { createFileRoute, Link } from "@tanstack/react-router";
+import { Nav, Footer } from "@/components/sofy/Nav";
+import sofia1 from "@/assets/sofia-1.jpg.asset.json";
+import sofia2 from "@/assets/sofia-2.jpg.asset.json";
+import sofia3 from "@/assets/sofia-3.jpg.asset.json";
+import sofiaPortrait from "@/assets/sofia-portrait.jpg.asset.json";
 
 export const Route = createFileRoute("/")({
+  component: HomePage,
   head: () => ({
     meta: [
-      { title: "Erik Vance — WordPress Specialist & Custom Development" },
-      {
-        name: "description",
-        content:
-          "Freelance WordPress specialist building custom themes, plugins, and headless WooCommerce architectures for performance-obsessed brands.",
-      },
-      { property: "og:title", content: "Erik Vance — WordPress Specialist" },
-      {
-        property: "og:description",
-        content: "Custom WordPress development for performance-obsessed brands.",
-      },
-      { property: "og:type", content: "profile" },
+      { title: "Sofy Web Design — Siti WordPress che vendono ogni giorno" },
+      { name: "description", content: "Web designer freelance WordPress. Siti curati che raccontano chi sei e portano vendite reali. Per donne e professioniste." },
+      { property: "og:title", content: "Sofy Web Design — Siti WordPress curati" },
+      { property: "og:description", content: "Siti WordPress che raccontano chi sei e vendono ogni giorno." },
       { property: "og:url", content: "/" },
-      { name: "twitter:title", content: "Erik Vance — WordPress Specialist" },
-      {
-        name: "twitter:description",
-        content: "Custom WordPress development for performance-obsessed brands.",
-      },
+      { property: "og:image", content: sofiaPortrait.url },
     ],
     links: [{ rel: "canonical", href: "/" }],
-    scripts: [
-      {
-        type: "application/ld+json",
-        children: JSON.stringify({
-          "@context": "https://schema.org",
-          "@graph": [
-            {
-              "@type": "Person",
-              name: "Erik Vance",
-              jobTitle: "WordPress Specialist",
-              description:
-                "Freelance WordPress specialist building custom themes, plugins, and headless WooCommerce architectures.",
-              address: { "@type": "PostalAddress", addressLocality: "Berlin", addressCountry: "DE" },
-              knowsAbout: [
-                "WordPress",
-                "WooCommerce",
-                "Gutenberg",
-                "Advanced Custom Fields",
-                "PHP",
-                "Headless CMS",
-                "Web Performance",
-              ],
-            },
-            {
-              "@type": "ProfessionalService",
-              name: "Erik Vance — WordPress Development",
-              serviceType: "Custom WordPress Development",
-              areaServed: "Worldwide",
-              priceRange: "$$",
-            },
-          ],
-        }),
-      },
-    ],
+    scripts: [{
+      type: "application/ld+json",
+      children: JSON.stringify({
+        "@context": "https://schema.org",
+        "@type": "ProfessionalService",
+        name: "Sofy Web Design",
+        description: "Web design WordPress per donne e professioniste.",
+        image: sofiaPortrait.url,
+        areaServed: "Italia",
+        serviceType: "Web design WordPress",
+      }),
+    }],
   }),
-  component: Index,
 });
 
-
-type Project = {
-  tag: string;
-  title: string;
-  description: string;
-  image: string;
-};
-
-const projects: Project[] = [
-  {
-    tag: "ACF_PRO // WOOCOMMERCE",
-    title: "Nordic Form",
-    description:
-      "High-performance headless WooCommerce build with 0.8s LCP and a custom inventory sync layer.",
-    image: nordicForm,
-  },
-  {
-    tag: "GUTENBERG // CUSTOM_BLOCKS",
-    title: "The Pulse",
-    description:
-      "Editorial platform featuring 40+ custom Gutenberg blocks and an automated editorial workflow.",
-    image: pulse,
-  },
+const pains = [
+  { i: "i", t: "Il sito c'è, ma sembra di un'altra.", p: "Lo guardi e non ti riconosci più: i colori non sono i tuoi, i testi parlano una lingua che non è la tua." },
+  { i: "ii", t: "Le persone entrano e se ne vanno.", p: "Vedi visite nelle statistiche, ma niente messaggi, niente prenotazioni, niente vendite." },
+  { i: "iii", t: "Aggiornarlo è un incubo.", p: "Ogni piccola modifica richiede di scrivere a qualcuno, aspettare giorni e a volte pagare un extra." },
+  { i: "iv", t: "Da mobile è imbarazzante.", p: "Il 70% delle persone ti cerca dal telefono e trova testi piccoli, pulsanti che non si vedono." },
+  { i: "v", t: "Su Google non esisti.", p: "Hai investito, ma se digiti il tuo servizio + città non ti trovi. Non sei ottimizzata." },
+  { i: "vi", t: "Hai paura di rifarlo da capo.", p: "Non vuoi rivivere mesi di mail, brief, PDF da approvare e risultati deludenti." },
 ];
 
-function Index() {
+const values = [
+  { t: "Identità visiva coerente.", p: "Colori, font, immagini e micro-dettagli che parlano di te — pensati insieme, non scelti a caso." },
+  { t: "Struttura che converte.", p: "Le pagine sono ordinate come una conversazione: attenzione, fiducia, prova, decisione." },
+  { t: "Veloce, mobile-first, indicizzato.", p: "Tempo di caricamento sotto i 2 secondi, pensato prima per smartphone, ottimizzato per Google." },
+  { t: "Autonomia totale dopo il lancio.", p: "Ti consegno un sito che puoi aggiornare tu, in pochi clic. Con video tutorial su misura." },
+];
+
+const services = [
+  { m: "b", t: "Blog moderno", p: "Per chi vuole costruire autorevolezza e farsi trovare su Google con costanza.", l: ["Architettura editoriale", "Layout articoli & categorie", "SEO base on-page", "Newsletter integrata"] },
+  { m: "e", t: "E-commerce", p: "Vendi i tuoi prodotti online con un negozio WooCommerce ordinato e pensato per convertire.", l: ["Schede prodotto curate", "Checkout ottimizzato", "Pagamenti & spedizioni", "Email automatiche"] },
+  { m: "p", t: "Sito per professionisti", p: "Per chi vende il proprio tempo: consulenti, terapiste, coach, professioniste del beauty.", l: ["Pagina servizi efficace", "Prenotazione online", "Pagina chi sono che converte", "Form & lead magnet"] },
+];
+
+const steps = [
+  { n: 1, t: "Ascolto", p: "Una call gratuita di 30 minuti per capire chi sei e che cosa ti serve davvero." },
+  { n: 2, t: "Strategia", p: "Mappiamo struttura, contenuti e tono. Ricevi un documento di progetto prima di partire." },
+  { n: 3, t: "Design & sviluppo", p: "Disegno il sito su Figma, lo costruisco su WordPress e te lo mostro vivo." },
+  { n: 4, t: "Lancio & autonomia", p: "Ti formo per gestirlo da sola, ti lascio video tutorial e resto disponibile per il primo mese." },
+];
+
+const faqs = [
+  { q: "Quanto costa un sito?", a: "Ogni progetto è diverso e il preventivo è gratuito. Un sito vetrina parte da una cifra contenuta, mentre un e-commerce richiede un investimento maggiore. Dopo la prima call ricevi un'offerta dettagliata, scritta, valida 30 giorni." },
+  { q: "In quanto tempo è online?", a: "Un sito vetrina richiede in media 3 settimane, un e-commerce 5–6. I tempi dipendono dalla velocità con cui mi mandi i contenuti: ti accompagno con una checklist." },
+  { q: "Lavori solo su WordPress?", a: "Sì, è la mia specialità. WordPress è la piattaforma più diffusa al mondo, flessibile e in tuo pieno controllo: nessun lock-in, nessun canone alto." },
+  { q: "Posso modificarlo da sola dopo?", a: "Assolutamente. Ti consegno il sito con un pannello semplice, video tutorial registrati su misura e una guida PDF." },
+  { q: "Che cosa devo preparare?", a: "Niente, all'inizio. Bastano poche idee e una chiacchierata. Insieme definiamo brief, contenuti e immagini." },
+  { q: "Offri anche manutenzione?", a: "Sì. Dopo il lancio puoi scegliere un piano di manutenzione mensile: backup, aggiornamenti, sicurezza e ore dedicate alle modifiche." },
+];
+
+function HomePage() {
   return (
-    <div className="min-h-screen bg-wp-bg text-wp-fg font-sans selection:bg-wp-primary/30">
-      <nav className="sticky top-0 z-50 flex items-center justify-between px-6 py-4 border-b border-wp-border bg-wp-bg/80 backdrop-blur-md">
-        <div className="font-display text-2xl tracking-tighter uppercase">Erik.Dev</div>
-        <div className="flex gap-4 md:gap-8 text-[10px] md:text-xs font-mono uppercase tracking-widest">
-          <a href="#work" className="hover:text-wp-primary transition-colors">[ Projects ]</a>
-          <a href="#stack" className="hidden sm:inline hover:text-wp-primary transition-colors">[ Capabilities ]</a>
-          <a href="#contact" className="px-3 py-1 bg-wp-primary text-wp-bg font-bold">Contact</a>
+    <div className="sofy">
+      <Nav active="/" />
+
+      {/* HERO */}
+      <section style={{ padding: "96px 0 120px", position: "relative", overflow: "hidden" }}>
+        <div aria-hidden style={{ position: "absolute", top: -180, right: -160, width: 520, height: 520, borderRadius: "50%", background: "radial-gradient(closest-side, rgba(201,161,139,0.35), transparent 70%)", pointerEvents: "none" }} />
+        <div aria-hidden style={{ position: "absolute", bottom: -200, left: -160, width: 440, height: 440, borderRadius: "50%", background: "radial-gradient(closest-side, rgba(176,133,110,0.22), transparent 70%)", pointerEvents: "none" }} />
+        <div className="container hero-anim" style={{ position: "relative", textAlign: "center", maxWidth: 880, margin: "0 auto" }}>
+          <span className="tag"><span className="dot" /> Web design su WordPress · Disponibile da maggio</span>
+          <h1 className="h-display" style={{ marginTop: 24 }}>
+            Un sito che ti rappresenta<br /> e <em>vende</em> ogni giorno per te.
+          </h1>
+          <p className="lead" style={{ maxWidth: 640, margin: "28px auto 0" }}>
+            Creo siti WordPress che raccontano chi sei, portano vendite e prenotazioni reali, e fanno crescere il valore del tuo brand sul web — senza che tu debba pensare a una sola riga di codice.
+          </p>
+          <div className="row" style={{ justifyContent: "center", marginTop: 40 }}>
+            <Link to="/prenotazione" className="btn btn-primary btn-arrow">Prenota una consulenza</Link>
+            <Link to="/concept" className="btn btn-ghost">Vedi i miei concept</Link>
+          </div>
+
+          <div style={{ display: "flex", justifyContent: "center", gap: 40, marginTop: 64, flexWrap: "wrap" }}>
+            {[["+40", "siti pubblicati"], ["5★", "recensioni clienti"], ["3 sett.", "tempo medio consegna"]].map(([n, l]) => (
+              <div key={l} style={{ textAlign: "center" }}>
+                <strong style={{ display: "block", fontFamily: "var(--ff-serif)", fontSize: 36, color: "var(--espresso)", lineHeight: 1 }}>{n}</strong>
+                <span style={{ fontSize: 11, letterSpacing: "0.18em", textTransform: "uppercase", color: "var(--cacao)", marginTop: 8, display: "block" }}>{l}</span>
+              </div>
+            ))}
+          </div>
+
+          <div style={{ marginTop: 72, display: "grid", gridTemplateColumns: "1fr 1.2fr 1fr", gap: 24, alignItems: "center" }}>
+            <div className="ph" style={{ aspectRatio: "3/4.6", backgroundImage: `url(${sofia1.url})` }} />
+            <div className="ph" style={{ aspectRatio: "4/5.6", backgroundImage: `url(${sofia2.url})` }} />
+            <div className="ph" style={{ aspectRatio: "3/4.6", backgroundImage: `url(${sofia3.url})` }} />
+          </div>
         </div>
-      </nav>
+      </section>
 
-      <main>
-        <section className="relative px-6 py-24 lg:py-40 border-b border-wp-border overflow-hidden">
-          <div className="absolute top-10 right-10 text-[20vw] font-display text-white/[0.02] leading-none select-none pointer-events-none">
-            WP_CORE
+      {/* PAIN */}
+      <section style={{ background: "var(--bg-soft)", padding: "120px 0", borderTop: "1px solid var(--line)", borderBottom: "1px solid var(--line)" }}>
+        <div className="container">
+          <div style={{ textAlign: "center", maxWidth: 760, margin: "0 auto 64px" }}>
+            <span className="eyebrow">Il problema</span>
+            <h2 className="h-1" style={{ marginTop: 14 }}>Hai un sito, ma <em>non lavora per te.</em></h2>
+            <p className="lead" style={{ marginTop: 20 }}>Forse ti riconosci in qualcuno di questi punti. Sono le cose che sento ripetere ogni settimana dalle clienti che arrivano da me.</p>
           </div>
-          <div className="max-w-6xl mx-auto grid lg:grid-cols-12 gap-12 items-end relative">
-            <div className="lg:col-span-8 animate-reveal">
-              <div className="inline-block px-2 py-1 mb-6 border border-wp-primary/40 text-wp-primary text-[10px] font-mono uppercase tracking-widest">
-                WordPress Engineering Specialist
-              </div>
-              <h1 className="font-display text-6xl sm:text-7xl md:text-9xl uppercase leading-[0.85] tracking-tighter mb-8">
-                Engineering <br />
-                <span className="text-wp-primary">Scalable</span> Web
-              </h1>
-              <p className="max-w-md text-wp-muted text-lg leading-relaxed">
-                Custom-built WordPress architectures for performance-obsessed brands. No templates, no bloat — just pure PHP and Gutenberg excellence.
-              </p>
-            </div>
-            <div className="lg:col-span-4 animate-reveal [animation-delay:200ms]">
-              <div className="p-6 border border-wp-border bg-white/[0.02] font-mono text-[11px] leading-loose">
-                <div className="text-wp-primary">// CURRENT_STATUS</div>
-                <div className="flex justify-between"><span>Location</span><span className="text-wp-muted">Berlin, DE</span></div>
-                <div className="flex justify-between"><span>Availability</span><span className="text-wp-primary">Open Q3 2026</span></div>
-                <div className="flex justify-between"><span>Specialty</span><span className="text-wp-muted">Headless & Woo</span></div>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        <section id="work" className="px-6 py-24">
-          <div className="max-w-6xl mx-auto">
-            <div className="flex justify-between items-end mb-16 animate-reveal">
-              <h2 className="font-display text-4xl uppercase tracking-tight">Selected Builds</h2>
-              <span className="font-mono text-xs text-wp-muted">[ 001 — 002 ]</span>
-            </div>
-            <div className="grid md:grid-cols-2 gap-px bg-wp-border border border-wp-border">
-              {projects.map((p) => (
-                <article key={p.title} className="group bg-wp-bg p-8 lg:p-12 hover:bg-white/[0.02] transition-colors">
-                  <div className="font-mono text-[10px] text-wp-primary mb-4">{p.tag}</div>
-                  <div className="w-full aspect-[4/3] bg-white/5 border border-wp-border mb-8 overflow-hidden">
-                    <img
-                      src={p.image}
-                      alt={`${p.title} project cover`}
-                      width={800}
-                      height={608}
-                      loading="lazy"
-                      className="w-full h-full object-cover opacity-60 grayscale group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-700"
-                    />
-                  </div>
-                  <h3 className="font-display text-3xl uppercase mb-2">{p.title}</h3>
-                  <p className="text-wp-muted text-sm max-w-sm mb-6">{p.description}</p>
-                  <div className="h-px w-0 group-hover:w-full bg-wp-primary transition-all duration-500" />
-                </article>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        <section id="stack" className="px-6 py-24 bg-white/[0.01] border-y border-wp-border">
-          <div className="max-w-6xl mx-auto grid lg:grid-cols-3 gap-12">
-            <div className="animate-reveal">
-              <h2 className="font-display text-5xl uppercase leading-none mb-6">Custom <br /><span className="text-wp-primary">Dev</span></h2>
-              <p className="text-wp-muted text-sm mb-8">Deep PHP expertise to bend WordPress to any business requirement. I build engines, not just skins.</p>
-              <ul className="font-mono text-xs space-y-3">
-                {["Custom Plugin Development","Third-party API Integration","Database Optimization"].map((i) => (
-                  <li key={i} className="flex items-center gap-3"><span className="size-1.5 bg-wp-primary" /> {i}</li>
-                ))}
-              </ul>
-            </div>
-            <div className="animate-reveal [animation-delay:100ms]">
-              <h2 className="font-display text-5xl uppercase leading-none mb-6">User <br /><span className="text-wp-primary">Exp</span></h2>
-              <p className="text-wp-muted text-sm mb-8">Leveraging Gutenberg to give clients an intuitive, visual editing experience that scales with the business.</p>
-              <ul className="font-mono text-xs space-y-3">
-                {["Block-based Themes","Performance Tuning","Accessibility (WCAG)"].map((i) => (
-                  <li key={i} className="flex items-center gap-3"><span className="size-1.5 bg-wp-primary" /> {i}</li>
-                ))}
-              </ul>
-            </div>
-            <div className="animate-reveal [animation-delay:200ms]">
-              <div className="p-8 border border-wp-primary/20 bg-wp-primary/5">
-                <div className="font-mono text-[10px] text-wp-primary uppercase mb-6">Tech Stack v2.6</div>
-                <div className="grid grid-cols-2 gap-y-4 font-display text-xl uppercase tracking-tight">
-                  <div>PHP 8.3</div><div>WP Core</div><div>ACF Pro</div><div>React</div><div>Woo</div><div>Tailwind</div>
+          <div style={{ display: "grid", gridTemplateColumns: "repeat(2, 1fr)", gap: 16 }}>
+            {pains.map((p) => (
+              <div key={p.i} style={{ background: "var(--cream)", border: "1px solid var(--line)", borderRadius: "var(--radius-m)", padding: "28px 28px 28px 32px", display: "flex", gap: 18, alignItems: "flex-start" }}>
+                <div style={{ flexShrink: 0, width: 36, height: 36, borderRadius: "50%", background: "var(--bg-warm)", color: "var(--cacao-deep)", display: "grid", placeItems: "center", fontFamily: "var(--ff-serif)", fontStyle: "italic", fontSize: 18 }}>{p.i}</div>
+                <div>
+                  <h4 className="h-3" style={{ margin: "4px 0 8px" }}>{p.t}</h4>
+                  <p className="body" style={{ margin: 0 }}>{p.p}</p>
                 </div>
               </div>
-            </div>
+            ))}
           </div>
-        </section>
+          <p style={{ marginTop: 64, textAlign: "center", fontFamily: "var(--ff-serif)", fontStyle: "italic", fontSize: "clamp(22px, 2.4vw, 32px)", color: "var(--espresso)", lineHeight: 1.4, maxWidth: 720, marginLeft: "auto", marginRight: "auto" }}>
+            "Un sito non è un costo. È la tua vetrina aperta 24 ore su 24, sette giorni su sette. Se è fatta bene, lavora per te anche mentre dormi."
+          </p>
+        </div>
+      </section>
 
-        <section id="contact" className="px-6 py-32 text-center">
-          <div className="max-w-4xl mx-auto animate-reveal">
-            <h2 className="font-display text-5xl sm:text-6xl md:text-8xl uppercase tracking-tighter mb-12">
-              Ready to build <br />
-              the <span className="text-wp-primary italic">next</span> level?
-            </h2>
-            <a href="mailto:hello@erik.dev" className="group inline-flex items-center gap-6 px-12 py-6 border border-wp-border hover:border-wp-primary transition-colors">
-              <span className="font-display text-2xl uppercase">Get in touch</span>
-              <span className="font-mono text-wp-primary text-2xl group-hover:translate-x-2 transition-transform">→</span>
-            </a>
-          </div>
-        </section>
-      </main>
-
-      <footer className="px-6 py-12 border-t border-wp-border">
-        <div className="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-center gap-8">
-          <div className="font-mono text-[10px] text-wp-muted uppercase tracking-widest">© 2026 Erik Vance / Custom WordPress Architecture</div>
-          <div className="flex gap-8 font-mono text-[10px] text-wp-muted uppercase tracking-widest">
-            <a href="#" className="hover:text-wp-primary transition-colors">GitHub</a>
-            <a href="#" className="hover:text-wp-primary transition-colors">LinkedIn</a>
-            <a href="#" className="hover:text-wp-primary transition-colors">Twitter</a>
+      {/* SOLUTION */}
+      <section style={{ padding: "120px 0" }}>
+        <div className="container" style={{ display: "grid", gridTemplateColumns: "1.05fr 1fr", gap: 80, alignItems: "center" }}>
+          <div className="ph" style={{ aspectRatio: "5/6", backgroundImage: `url(${sofiaPortrait.url})` }} />
+          <div>
+            <span className="eyebrow">La soluzione</span>
+            <h2 className="h-1" style={{ marginTop: 14 }}>Un sito <em>WordPress</em> pensato come una piccola macchina di vendita.</h2>
+            <p className="lead" style={{ marginTop: 24 }}>Non solo un bel design. Ogni pagina, ogni titolo, ogni call to action è studiata per accompagnare chi arriva sul sito da "curioso" a "cliente". Senza forzature, con il tono giusto per te.</p>
+            <ul style={{ listStyle: "none", padding: 0, margin: "32px 0 0" }}>
+              {values.map((v, i) => (
+                <li key={i} style={{ display: "flex", gap: 16, padding: "18px 0", borderTop: "1px solid var(--line)", borderBottom: i === values.length - 1 ? "1px solid var(--line)" : undefined }}>
+                  <span style={{ flexShrink: 0, width: 28, height: 28, borderRadius: "50%", border: "1px solid var(--rose-deep)", color: "var(--rose-deep)", display: "grid", placeItems: "center", fontSize: 14 }}>✓</span>
+                  <div>
+                    <h5 style={{ margin: "2px 0 4px", fontSize: 16, fontWeight: 600, color: "var(--espresso)" }}>{v.t}</h5>
+                    <p style={{ margin: 0, fontSize: 14, color: "var(--ink-soft)", lineHeight: 1.55 }}>{v.p}</p>
+                  </div>
+                </li>
+              ))}
+            </ul>
           </div>
         </div>
-      </footer>
+      </section>
+
+      {/* SERVICES */}
+      <section style={{ background: "var(--espresso)", color: "var(--cream)", padding: "120px 0" }}>
+        <div className="container">
+          <div style={{ textAlign: "center", maxWidth: 720, margin: "0 auto 72px" }}>
+            <span className="eyebrow" style={{ color: "var(--rose)" }}>Servizi</span>
+            <h2 className="h-1" style={{ marginTop: 14, color: "var(--cream)" }}>Tre modi per <em style={{ color: "var(--rose)" }}>lavorare</em> insieme.</h2>
+            <p className="lead" style={{ marginTop: 20, color: "rgba(251,246,241,0.78)" }}>Ogni progetto parte da una conversazione e da un brief gratuito. I prezzi sono personalizzati.</p>
+          </div>
+          <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: 20 }}>
+            {services.map((s) => (
+              <div key={s.t} style={{ background: "rgba(251,246,241,0.04)", border: "1px solid rgba(251,246,241,0.12)", borderRadius: "var(--radius-m)", padding: "36px 30px 30px", display: "flex", flexDirection: "column", gap: 18, minHeight: 380 }}>
+                <div style={{ width: 48, height: 48, borderRadius: "50%", background: "var(--cream)", color: "var(--espresso)", display: "grid", placeItems: "center", fontFamily: "var(--ff-serif)", fontStyle: "italic", fontSize: 22 }}>{s.m}</div>
+                <h3 style={{ fontFamily: "var(--ff-serif)", fontWeight: 400, fontSize: 28, margin: 0, color: "var(--cream)" }}>{s.t}</h3>
+                <p style={{ color: "rgba(251,246,241,0.72)", fontSize: 14.5, lineHeight: 1.6, margin: 0 }}>{s.p}</p>
+                <ul style={{ listStyle: "none", padding: 0, margin: 0, fontSize: 13, color: "rgba(251,246,241,0.6)" }}>
+                  {s.l.map((li) => (
+                    <li key={li} style={{ padding: "6px 0", borderTop: "1px solid rgba(251,246,241,0.1)" }}>{li}</li>
+                  ))}
+                </ul>
+                <span style={{ marginTop: "auto", paddingTop: 18, color: "var(--rose)", fontSize: 12, letterSpacing: "0.18em", textTransform: "uppercase", fontWeight: 600 }}>Scopri di più →</span>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* PROCESS */}
+      <section style={{ padding: "120px 0", background: "var(--bg-soft)", borderTop: "1px solid var(--line)" }}>
+        <div className="container">
+          <div style={{ textAlign: "center", maxWidth: 720, margin: "0 auto 80px" }}>
+            <span className="eyebrow">Come lavoriamo</span>
+            <h2 className="h-1" style={{ marginTop: 14 }}>Un percorso <em>chiaro</em>, in quattro tappe.</h2>
+          </div>
+          <div style={{ display: "grid", gridTemplateColumns: "repeat(4, 1fr)", gap: 0, position: "relative" }}>
+            {steps.map((s) => (
+              <div key={s.n} style={{ position: "relative", zIndex: 1, padding: "0 16px", textAlign: "center" }}>
+                <div style={{ width: 56, height: 56, borderRadius: "50%", background: "var(--bg)", border: "1px solid var(--line)", color: "var(--rose-deep)", display: "grid", placeItems: "center", fontFamily: "var(--ff-serif)", fontStyle: "italic", fontSize: 24, margin: "0 auto 22px" }}>{s.n}</div>
+                <h4 style={{ fontSize: 16, margin: "0 0 8px", color: "var(--espresso)" }}>{s.t}</h4>
+                <p style={{ fontSize: 13.5, color: "var(--ink-soft)", lineHeight: 1.55, margin: 0 }}>{s.p}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* FAQ */}
+      <section style={{ background: "var(--bg-soft)", padding: "120px 0", borderTop: "1px solid var(--line)" }}>
+        <div className="container" style={{ display: "grid", gridTemplateColumns: "0.9fr 1.4fr", gap: 80, alignItems: "start" }}>
+          <div>
+            <span className="eyebrow">Domande frequenti</span>
+            <h2 className="h-1" style={{ marginTop: 14 }}>Le risposte <em>più richieste</em>.</h2>
+            <p className="lead" style={{ marginTop: 20 }}>Se la tua domanda non c'è, scrivimi: rispondo personalmente entro un giorno lavorativo.</p>
+          </div>
+          <div style={{ display: "flex", flexDirection: "column", gap: 12 }}>
+            {faqs.map((f, i) => (
+              <details key={i} open={i === 0} style={{ background: "var(--cream)", border: "1px solid var(--line)", borderRadius: "var(--radius-m)", padding: "22px 26px" }}>
+                <summary style={{ listStyle: "none", cursor: "pointer", display: "flex", justifyContent: "space-between", alignItems: "center", fontWeight: 600, fontSize: 15, color: "var(--espresso)" }}>
+                  {f.q}<span style={{ fontFamily: "var(--ff-serif)", fontSize: 22, color: "var(--rose-deep)" }}>+</span>
+                </summary>
+                <p style={{ margin: "14px 0 0", fontSize: 14.5, color: "var(--ink-soft)", lineHeight: 1.6 }}>{f.a}</p>
+              </details>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* CTA */}
+      <section style={{ padding: "140px 0", textAlign: "center", background: "radial-gradient(ellipse at 50% 20%, rgba(201,161,139,0.35), transparent 60%), var(--bg)" }}>
+        <div className="container">
+          <span className="eyebrow">Pronta a partire?</span>
+          <h2 className="h-display" style={{ marginTop: 18, maxWidth: 900, marginLeft: "auto", marginRight: "auto" }}>Costruiamo insieme<br />il sito <em>che meriti.</em></h2>
+          <p className="lead" style={{ maxWidth: 580, margin: "28px auto 0" }}>La prima call è gratuita, dura 30 minuti, e da lì capiamo se ha senso lavorare insieme. Senza impegno, senza vendita aggressiva.</p>
+          <div className="row" style={{ justifyContent: "center", marginTop: 40 }}>
+            <Link to="/prenotazione" className="btn btn-primary btn-arrow">Prenota la tua call</Link>
+            <Link to="/chi-sono" className="btn btn-ghost">Conosci Sofy</Link>
+          </div>
+        </div>
+      </section>
+
+      <Footer />
     </div>
   );
 }
