@@ -75,6 +75,21 @@ function PrenotazionePage() {
                 </div>
               </div>
             </div>
+
+            <div style={{ marginTop: 24, background: "var(--espresso)", color: "var(--cream)", border: "1px solid var(--espresso)", borderRadius: "var(--radius-l)", padding: 28 }}>
+              <span style={{ fontSize: 11, letterSpacing: "0.22em", textTransform: "uppercase", color: "var(--rose)" }}>Preferisci scrivere?</span>
+              <h4 style={{ fontFamily: "var(--ff-serif)", fontWeight: 400, fontSize: 24, margin: "10px 0 18px", lineHeight: 1.2 }}>Contattami direttamente.</h4>
+              <ul style={{ listStyle: "none", padding: 0, margin: 0, display: "flex", flexDirection: "column", gap: 12 }}>
+                <li style={{ display: "flex", alignItems: "center", gap: 12, fontSize: 14 }}>
+                  <span aria-hidden style={{ width: 32, height: 32, borderRadius: "50%", background: "rgba(251,246,241,0.08)", color: "var(--rose)", display: "grid", placeItems: "center", fontFamily: "var(--ff-serif)", fontStyle: "italic" }}>@</span>
+                  <a href="mailto:sofisofi10123@gmail.com" style={{ color: "var(--cream)", textDecoration: "none" }}>sofisofi10123@gmail.com</a>
+                </li>
+                <li style={{ display: "flex", alignItems: "center", gap: 12, fontSize: 14 }}>
+                  <span aria-hidden style={{ width: 32, height: 32, borderRadius: "50%", background: "rgba(251,246,241,0.08)", color: "var(--rose)", display: "grid", placeItems: "center", fontFamily: "var(--ff-serif)", fontStyle: "italic" }}>☏</span>
+                  <a href="tel:+393501646712" style={{ color: "var(--cream)", textDecoration: "none" }}>+39 350 164 6712</a>
+                </li>
+              </ul>
+            </div>
           </div>
 
           {/* FORM */}
