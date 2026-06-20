@@ -16,10 +16,53 @@ export const Route = createFileRoute("/")({
         property: "og:description",
         content: "Custom WordPress development for performance-obsessed brands.",
       },
+      { property: "og:type", content: "profile" },
+      { property: "og:url", content: "/" },
+      { name: "twitter:title", content: "Erik Vance — WordPress Specialist" },
+      {
+        name: "twitter:description",
+        content: "Custom WordPress development for performance-obsessed brands.",
+      },
+    ],
+    links: [{ rel: "canonical", href: "/" }],
+    scripts: [
+      {
+        type: "application/ld+json",
+        children: JSON.stringify({
+          "@context": "https://schema.org",
+          "@graph": [
+            {
+              "@type": "Person",
+              name: "Erik Vance",
+              jobTitle: "WordPress Specialist",
+              description:
+                "Freelance WordPress specialist building custom themes, plugins, and headless WooCommerce architectures.",
+              address: { "@type": "PostalAddress", addressLocality: "Berlin", addressCountry: "DE" },
+              knowsAbout: [
+                "WordPress",
+                "WooCommerce",
+                "Gutenberg",
+                "Advanced Custom Fields",
+                "PHP",
+                "Headless CMS",
+                "Web Performance",
+              ],
+            },
+            {
+              "@type": "ProfessionalService",
+              name: "Erik Vance — WordPress Development",
+              serviceType: "Custom WordPress Development",
+              areaServed: "Worldwide",
+              priceRange: "$$",
+            },
+          ],
+        }),
+      },
     ],
   }),
   component: Index,
 });
+
 
 type Project = {
   tag: string;
