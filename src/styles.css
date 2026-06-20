@@ -96,11 +96,11 @@ html, body {
 
 /* typography */
 .sofy .eyebrow { font-size: 11px; font-weight: 500; letter-spacing: 0.22em; text-transform: uppercase; color: var(--cacao); }
-.sofy .h-display { font-family: var(--ff-serif); font-weight: 400; font-size: clamp(44px, 6.4vw, 96px); line-height: 1.02; letter-spacing: -0.01em; color: var(--espresso); margin: 0; }
+.sofy .h-display { font-family: var(--ff-serif); font-weight: 400; font-size: clamp(38px, 4.6vw, 72px); line-height: 1.08; letter-spacing: -0.01em; color: var(--espresso); margin: 0; text-wrap: balance; }
 .sofy .h-display em { font-style: italic; color: var(--rose-deep); }
-.sofy .h-1 { font-family: var(--ff-serif); font-weight: 400; font-size: clamp(36px, 4.4vw, 64px); line-height: 1.06; color: var(--espresso); margin: 0; }
+.sofy .h-1 { font-family: var(--ff-serif); font-weight: 400; font-size: clamp(30px, 3.4vw, 52px); line-height: 1.12; color: var(--espresso); margin: 0; text-wrap: balance; }
 .sofy .h-1 em { font-style: italic; color: var(--rose-deep); }
-.sofy .h-2 { font-family: var(--ff-serif); font-weight: 400; font-size: clamp(28px, 3vw, 44px); line-height: 1.12; color: var(--espresso); margin: 0; }
+.sofy .h-2 { font-family: var(--ff-serif); font-weight: 400; font-size: clamp(24px, 2.4vw, 36px); line-height: 1.18; color: var(--espresso); margin: 0; text-wrap: balance; }
 .sofy .h-2 em { font-style: italic; color: var(--rose-deep); }
 .sofy .h-3 { font-size: 18px; font-weight: 600; color: var(--espresso); margin: 0; }
 .sofy .lead { font-size: clamp(16px, 1.2vw, 19px); line-height: 1.6; color: var(--ink-soft); margin: 0; text-wrap: pretty; }

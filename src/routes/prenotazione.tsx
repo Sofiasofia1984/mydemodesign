@@ -46,7 +46,7 @@ function PrenotazionePage() {
           {/* LEFT */}
           <div className="hero-anim" style={{ position: "sticky", top: 100 }}>
             <span className="eyebrow">Prenotazione</span>
-            <h1 className="h-display" style={{ marginTop: 20 }}>Iniziamo<br />con un <em>caffè</em>.</h1>
+            <h1 className="h-display" style={{ marginTop: 20 }}>Iniziamo con un <em>caffè</em>.</h1>
             <p className="lead" style={{ marginTop: 24, maxWidth: 460 }}>
               Compila il form: ti richiamo entro 24 ore lavorative per fissare una call gratuita di 30 minuti, capire il tuo progetto e — se ha senso lavorare insieme — prepararti un preventivo scritto.
             </p>
@@ -75,6 +75,21 @@ function PrenotazionePage() {
                 </div>
               </div>
             </div>
+
+            <div style={{ marginTop: 24, background: "var(--espresso)", color: "var(--cream)", border: "1px solid var(--espresso)", borderRadius: "var(--radius-l)", padding: 28 }}>
+              <span style={{ fontSize: 11, letterSpacing: "0.22em", textTransform: "uppercase", color: "var(--rose)" }}>Preferisci scrivere?</span>
+              <h4 style={{ fontFamily: "var(--ff-serif)", fontWeight: 400, fontSize: 24, margin: "10px 0 18px", lineHeight: 1.2 }}>Contattami direttamente.</h4>
+              <ul style={{ listStyle: "none", padding: 0, margin: 0, display: "flex", flexDirection: "column", gap: 12 }}>
+                <li style={{ display: "flex", alignItems: "center", gap: 12, fontSize: 14 }}>
+                  <span aria-hidden style={{ width: 32, height: 32, borderRadius: "50%", background: "rgba(251,246,241,0.08)", color: "var(--rose)", display: "grid", placeItems: "center", fontFamily: "var(--ff-serif)", fontStyle: "italic" }}>@</span>
+                  <a href="mailto:sofisofi10123@gmail.com" style={{ color: "var(--cream)", textDecoration: "none" }}>sofisofi10123@gmail.com</a>
+                </li>
+                <li style={{ display: "flex", alignItems: "center", gap: 12, fontSize: 14 }}>
+                  <span aria-hidden style={{ width: 32, height: 32, borderRadius: "50%", background: "rgba(251,246,241,0.08)", color: "var(--rose)", display: "grid", placeItems: "center", fontFamily: "var(--ff-serif)", fontStyle: "italic" }}>☏</span>
+                  <a href="tel:+393501646712" style={{ color: "var(--cream)", textDecoration: "none" }}>+39 350 164 6712</a>
+                </li>
+              </ul>
+            </div>
           </div>
 
           {/* FORM */}
@@ -83,8 +98,8 @@ function PrenotazionePage() {
               <span style={{ width: 22, height: 22, borderRadius: "50%", background: "var(--rose)", color: "var(--cream)", display: "grid", placeItems: "center", fontSize: 11, fontWeight: 600, letterSpacing: 0 }}>1</span>
               Richiesta progetto · 2 minuti
             </span>
-            <h3 style={{ fontFamily: "var(--ff-serif)", fontWeight: 400, fontSize: 32, lineHeight: 1.15, color: "var(--espresso)", margin: "0 0 8px" }}>
-              Raccontami <em style={{ color: "var(--rose-deep)", fontStyle: "italic" }}>chi sei</em><br />e cosa ti serve.
+            <h3 style={{ fontFamily: "var(--ff-serif)", fontWeight: 400, fontSize: "clamp(24px, 2.4vw, 30px)", lineHeight: 1.2, color: "var(--espresso)", margin: "0 0 8px", textWrap: "balance" }}>
+              Raccontami <em style={{ color: "var(--rose-deep)", fontStyle: "italic" }}>chi sei</em> e cosa ti serve.
             </h3>
             <p style={{ fontSize: 14, color: "var(--ink-soft)", margin: "0 0 32px" }}>Tre informazioni e abbiamo iniziato. Tutto il resto lo vediamo insieme in call.</p>
 

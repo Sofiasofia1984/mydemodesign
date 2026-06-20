@@ -43,7 +43,7 @@ function ConceptPage() {
 
       <section className="container hero-anim" style={{ padding: "96px 0 56px", textAlign: "center" }}>
         <span className="eyebrow">Concept · Idee · Sperimentazioni</span>
-        <h1 className="h-display" style={{ maxWidth: 880, margin: "24px auto 0" }}>Le idee <em>prima</em><br />che diventino siti.</h1>
+        <h1 className="h-display" style={{ maxWidth: 880, margin: "24px auto 0" }}>Le idee <em>prima</em> che diventino siti.</h1>
         <p className="lead" style={{ maxWidth: 620, margin: "28px auto 0" }}>
           Una raccolta di concept, moodboard e direzioni creative. Alcuni sono diventati progetti reali, altri sono ancora ipotesi: studi liberi su brand, palette e layout per esplorare nuove direzioni.
         </p>
