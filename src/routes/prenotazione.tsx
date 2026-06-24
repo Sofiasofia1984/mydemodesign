@@ -120,13 +120,14 @@ function PrenotazionePage() {
                 <input type="text" placeholder="Il tuo nome" required style={inputStyle} />
               </Field>
               <Field label="Cellulare" required hint="Ti chiamo io — nessun numero verrà mai condiviso.">
-                <div style={{ display: "grid", gridTemplateColumns: "110px 1fr", gap: 12 }}>
-                  <select aria-label="Prefisso" style={{ ...inputStyle, paddingRight: 32, appearance: "none", backgroundImage: "url(\"data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='10' height='6' viewBox='0 0 10 6'><path d='M1 1l4 4 4-4' fill='none' stroke='%238B6F5C' stroke-width='1.4' stroke-linecap='round'/></svg>\")", backgroundRepeat: "no-repeat", backgroundPosition: "right 14px center" }}>
+                <div className="preno-tel" style={{ display: "flex", gap: 12 }}>
+                  <select aria-label="Prefisso" style={{ ...inputStyle, width: 110, flexShrink: 0, paddingRight: 32, appearance: "none", backgroundImage: "url(\"data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='10' height='6' viewBox='0 0 10 6'><path d='M1 1l4 4 4-4' fill='none' stroke='%238B6F5C' stroke-width='1.4' stroke-linecap='round'/></svg>\")", backgroundRepeat: "no-repeat", backgroundPosition: "right 14px center" }}>
                     <option>+39</option><option>+41</option><option>+33</option><option>+34</option><option>+44</option><option>+1</option>
                   </select>
                   <input type="tel" placeholder="333 123 4567" required style={inputStyle} />
                 </div>
               </Field>
+
               <Field label="Email" required>
                 <input type="email" placeholder="tu@email.it" required style={inputStyle} />
               </Field>
