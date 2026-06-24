@@ -2,6 +2,7 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { Nav, Footer } from "@/components/sofy/Nav";
 import sofiaPortrait from "@/assets/sofia-portrait.jpg.asset.json";
 import sofia1 from "@/assets/sofia-1.jpg.asset.json";
+import sofiaNewPortrait from "@/assets/sofia-new-portrait.jpg.asset.json";
 
 export const Route = createFileRoute("/chi-sono")({
   component: ChiSonoPage,
@@ -12,7 +13,7 @@ export const Route = createFileRoute("/chi-sono")({
       { property: "og:title", content: "Chi sono — Sofy Web Design" },
       { property: "og:description", content: "Ciao, sono Sofy. Web designer WordPress per donne e professioniste." },
       { property: "og:url", content: "/chi-sono" },
-      { property: "og:image", content: sofiaPortrait.url },
+      { property: "og:image", content: sofiaNewPortrait.url },
     ],
     links: [{ rel: "canonical", href: "/chi-sono" }],
   }),
@@ -44,7 +45,7 @@ function ChiSonoPage() {
       <Nav active="/chi-sono" />
 
       <section className="container" style={{ padding: "80px 0 100px", display: "grid", gridTemplateColumns: "1.1fr 1fr", gap: 80, alignItems: "center" }}>
-        <div className="ph" style={{ aspectRatio: "4/5", borderRadius: "var(--radius-l)", backgroundImage: `url(${sofiaPortrait.url})` }} />
+        <div className="ph" style={{ aspectRatio: "4/5", borderRadius: "var(--radius-l)", backgroundImage: `url(${sofiaNewPortrait.url})`, backgroundPosition: "center top" }} />
         <div className="hero-anim">
           <span className="eyebrow">Chi sono</span>
           <h1 className="h-display" style={{ marginTop: 18 }}>Ciao, sono <em>Sofy</em>.</h1>

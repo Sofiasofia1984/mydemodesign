@@ -96,13 +96,13 @@ html, body {
 
 /* typography */
 .sofy .eyebrow { font-size: 11px; font-weight: 500; letter-spacing: 0.22em; text-transform: uppercase; color: var(--cacao); }
-.sofy .h-display { font-family: var(--ff-serif); font-weight: 400; font-size: clamp(38px, 4.6vw, 72px); line-height: 1.08; letter-spacing: -0.01em; color: var(--espresso); margin: 0; text-wrap: balance; }
+.sofy .h-display { font-family: var(--ff-serif); font-weight: 400; font-size: clamp(38px, 4.6vw, 72px); line-height: 1.08; letter-spacing: 0; color: var(--espresso); margin: 0; text-wrap: balance; height: auto !important; min-height: 0; overflow: visible; }
 .sofy .h-display em { font-style: italic; color: var(--rose-deep); }
-.sofy .h-1 { font-family: var(--ff-serif); font-weight: 400; font-size: clamp(30px, 3.4vw, 52px); line-height: 1.12; color: var(--espresso); margin: 0; text-wrap: balance; }
+.sofy .h-1 { font-family: var(--ff-serif); font-weight: 400; font-size: clamp(30px, 3.4vw, 52px); line-height: 1.16; color: var(--espresso); margin: 0; text-wrap: balance; height: auto !important; min-height: 0; overflow: visible; }
 .sofy .h-1 em { font-style: italic; color: var(--rose-deep); }
-.sofy .h-2 { font-family: var(--ff-serif); font-weight: 400; font-size: clamp(24px, 2.4vw, 36px); line-height: 1.18; color: var(--espresso); margin: 0; text-wrap: balance; }
+.sofy .h-2 { font-family: var(--ff-serif); font-weight: 400; font-size: clamp(24px, 2.4vw, 36px); line-height: 1.22; color: var(--espresso); margin: 0; text-wrap: balance; height: auto !important; min-height: 0; overflow: visible; }
 .sofy .h-2 em { font-style: italic; color: var(--rose-deep); }
-.sofy .h-3 { font-size: 18px; font-weight: 600; color: var(--espresso); margin: 0; }
+.sofy .h-3 { font-size: 18px; line-height: 1.35; font-weight: 600; color: var(--espresso); margin: 0; height: auto !important; min-height: 0; overflow: visible; }
 .sofy .lead { font-size: clamp(16px, 1.2vw, 19px); line-height: 1.6; color: var(--ink-soft); margin: 0; text-wrap: pretty; }
 .sofy .body { font-size: 15px; line-height: 1.65; color: var(--ink-soft); }
 
@@ -169,6 +169,34 @@ html, body {
 
 @media (max-width: 860px) {
   .sofy .container { padding: 0 24px; }
+  .sofy section.container { padding-left: 24px !important; padding-right: 24px !important; }
+  .sofy .section { padding: 76px 0; }
   .sofy .nav-links { display: none; }
-  .sofy .footer-grid { grid-template-columns: 1fr 1fr; }
+  .sofy .nav-inner { height: 68px; gap: 14px; }
+  .sofy .nav .btn { display: none; }
+  .sofy .brand { font-size: 20px; }
+  .sofy .h-display { font-size: clamp(38px, 12vw, 52px); line-height: 1.12; }
+  .sofy .h-1 { font-size: clamp(31px, 9vw, 42px); line-height: 1.18; }
+  .sofy .h-2 { font-size: clamp(25px, 7vw, 32px); line-height: 1.22; }
+  .sofy .lead { font-size: 16px; line-height: 1.65; }
+  .sofy .btn { width: 100%; justify-content: center; white-space: normal; text-align: center; height: auto; min-height: 52px; padding: 14px 22px; }
+  .sofy .row { width: 100%; }
+  .sofy [style*="display: grid"],
+  .sofy [style*="display:grid"] { grid-template-columns: 1fr !important; gap: 40px !important; }
+  .sofy [style*="gridColumn"],
+  .sofy [style*="grid-column"] { grid-column: 1 / -1 !important; }
+  .sofy [style*="position: sticky"] { position: static !important; }
+  .sofy form { padding: 32px 22px 28px !important; border-radius: var(--radius-m) !important; }
+  .sofy .footer-grid { grid-template-columns: 1fr; gap: 34px; }
+  .sofy .footer-bottom { align-items: flex-start; flex-direction: column; gap: 12px; }
+}
+
+@media (max-width: 520px) {
+  .sofy .container { padding: 0 18px; }
+  .sofy section.container { padding-left: 18px !important; padding-right: 18px !important; }
+  .sofy .h-display { font-size: clamp(34px, 10.8vw, 44px); }
+  .sofy .h-1 { font-size: clamp(29px, 8.8vw, 38px); }
+  .sofy [style*="padding: 140px 0"],
+  .sofy [style*="padding: 120px 0"],
+  .sofy [style*="padding: 100px 0"] { padding-top: 76px !important; padding-bottom: 76px !important; }
 }
