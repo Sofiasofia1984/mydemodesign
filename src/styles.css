@@ -188,8 +188,9 @@ html, body {
   .sofy [style*="position: sticky"] { position: static !important; }
   .sofy form { padding: 28px 18px 24px !important; border-radius: var(--radius-m) !important; }
   .sofy .preno-picks { grid-template-columns: 1fr !important; gap: 10px !important; }
-  .sofy .preno-picks label { padding: 16px 18px !important; display: flex !important; align-items: center; gap: 14px; }
-  .sofy .preno-picks label > div:first-of-type { margin-bottom: 0 !important; width: 36px !important; height: 36px !important; }
+  .sofy .preno-picks label { padding: 18px 20px !important; }
+  .sofy .preno-picks label > div:first-of-type { margin-bottom: 12px !important; }
+
   .sofy .preno-hero-img { aspect-ratio: 16/10 !important; }
   .sofy .footer-grid { grid-template-columns: 1fr; gap: 34px; }
   .sofy .footer-bottom { align-items: flex-start; flex-direction: column; gap: 12px; }
