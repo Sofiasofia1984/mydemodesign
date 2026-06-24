@@ -181,15 +181,20 @@ html, body {
   .sofy .lead { font-size: 16px; line-height: 1.65; }
   .sofy .btn { width: 100%; justify-content: center; white-space: normal; text-align: center; height: auto; min-height: 52px; padding: 14px 22px; }
   .sofy .row { width: 100%; }
-  .sofy [style*="display: grid"],
-  .sofy [style*="display:grid"] { grid-template-columns: 1fr !important; gap: 40px !important; }
+  .sofy [style*="display: grid"]:not(.preno-tel):not(.keep-grid),
+  .sofy [style*="display:grid"]:not(.preno-tel):not(.keep-grid) { grid-template-columns: 1fr !important; gap: 32px !important; }
   .sofy [style*="gridColumn"],
   .sofy [style*="grid-column"] { grid-column: 1 / -1 !important; }
   .sofy [style*="position: sticky"] { position: static !important; }
-  .sofy form { padding: 32px 22px 28px !important; border-radius: var(--radius-m) !important; }
+  .sofy form { padding: 28px 18px 24px !important; border-radius: var(--radius-m) !important; }
+  .sofy .preno-picks { grid-template-columns: 1fr !important; gap: 10px !important; }
+  .sofy .preno-picks label { padding: 16px 18px !important; display: flex !important; align-items: center; gap: 14px; }
+  .sofy .preno-picks label > div:first-of-type { margin-bottom: 0 !important; width: 36px !important; height: 36px !important; }
+  .sofy .preno-hero-img { aspect-ratio: 16/10 !important; }
   .sofy .footer-grid { grid-template-columns: 1fr; gap: 34px; }
   .sofy .footer-bottom { align-items: flex-start; flex-direction: column; gap: 12px; }
 }
+
 
 @media (max-width: 520px) {
   .sofy .container { padding: 0 18px; }
