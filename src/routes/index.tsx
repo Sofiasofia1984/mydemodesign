@@ -4,6 +4,7 @@ import sofia1 from "@/assets/sofia-1.jpg.asset.json";
 import sofia2 from "@/assets/sofia-2.jpg.asset.json";
 import sofia3 from "@/assets/sofia-3.jpg.asset.json";
 import sofiaPortrait from "@/assets/sofia-portrait.jpg.asset.json";
+import sofiaNewPortrait from "@/assets/sofia-new-portrait.jpg.asset.json";
 
 export const Route = createFileRoute("/")({
   component: HomePage,
@@ -14,7 +15,7 @@ export const Route = createFileRoute("/")({
       { property: "og:title", content: "Sofy Web Design — Siti WordPress curati" },
       { property: "og:description", content: "Siti WordPress che raccontano chi sei e vendono ogni giorno." },
       { property: "og:url", content: "/" },
-      { property: "og:image", content: sofiaPortrait.url },
+      { property: "og:image", content: sofiaNewPortrait.url },
     ],
     links: [{ rel: "canonical", href: "/" }],
     scripts: [{
@@ -103,7 +104,7 @@ function HomePage() {
 
           <div style={{ marginTop: 72, display: "grid", gridTemplateColumns: "1fr 1.2fr 1fr", gap: 24, alignItems: "center" }}>
             <div className="ph" style={{ aspectRatio: "3/4.6", backgroundImage: `url(${sofia1.url})` }} />
-            <div className="ph" style={{ aspectRatio: "4/5.6", backgroundImage: `url(${sofia2.url})` }} />
+            <div className="ph" style={{ aspectRatio: "4/5.6", backgroundImage: `url(${sofiaNewPortrait.url})`, backgroundPosition: "center top" }} />
             <div className="ph" style={{ aspectRatio: "3/4.6", backgroundImage: `url(${sofia3.url})` }} />
           </div>
         </div>
