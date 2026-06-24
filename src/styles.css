@@ -169,6 +169,7 @@ html, body {
 
 @media (max-width: 860px) {
   .sofy .container { padding: 0 24px; }
+  .sofy section.container { padding-left: 24px !important; padding-right: 24px !important; }
   .sofy .section { padding: 76px 0; }
   .sofy .nav-links { display: none; }
   .sofy .nav-inner { height: 68px; gap: 14px; }
@@ -180,7 +181,8 @@ html, body {
   .sofy .lead { font-size: 16px; line-height: 1.65; }
   .sofy .btn { width: 100%; justify-content: center; white-space: normal; text-align: center; height: auto; min-height: 52px; padding: 14px 22px; }
   .sofy .row { width: 100%; }
-  .sofy [style*="display: grid"] { grid-template-columns: 1fr !important; }
+  .sofy [style*="display: grid"],
+  .sofy [style*="display:grid"] { grid-template-columns: 1fr !important; gap: 40px !important; }
   .sofy [style*="gridColumn"],
   .sofy [style*="grid-column"] { grid-column: 1 / -1 !important; }
   .sofy [style*="position: sticky"] { position: static !important; }
@@ -191,6 +193,7 @@ html, body {
 
 @media (max-width: 520px) {
   .sofy .container { padding: 0 18px; }
+  .sofy section.container { padding-left: 18px !important; padding-right: 18px !important; }
   .sofy .h-display { font-size: clamp(34px, 10.8vw, 44px); }
   .sofy .h-1 { font-size: clamp(29px, 8.8vw, 38px); }
   .sofy [style*="padding: 140px 0"],
