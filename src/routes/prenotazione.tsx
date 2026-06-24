@@ -134,7 +134,7 @@ function PrenotazionePage() {
             </FormSection>
 
             <FormSection num="ii" title="Il servizio che ti interessa">
-              <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr 1fr", gap: 12 }}>
+              <div className="preno-picks" style={{ display: "grid", gridTemplateColumns: "1fr 1fr 1fr", gap: 12 }}>
                 {picks.map((p) => {
                   const checked = servizio === p.v;
                   return (
