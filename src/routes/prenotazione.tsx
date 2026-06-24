@@ -42,14 +42,20 @@ function PrenotazionePage() {
       <Nav active="/prenotazione" />
 
       <section className="container" style={{ padding: "64px 0 120px" }}>
-        <div style={{ display: "grid", gridTemplateColumns: "0.95fr 1.15fr", gap: 80, alignItems: "start" }}>
+        <div className="preno-grid" style={{ display: "grid", gridTemplateColumns: "0.95fr 1.15fr", gap: 80, alignItems: "start" }}>
           {/* LEFT */}
-          <div className="hero-anim" style={{ position: "sticky", top: 100 }}>
+          <div className="hero-anim preno-left" style={{ position: "sticky", top: 100 }}>
             <span className="eyebrow">Prenotazione</span>
             <h1 className="h-display" style={{ marginTop: 20 }}>Iniziamo con un <em>caffè</em>.</h1>
+            <div className="preno-hero-img" aria-hidden style={{
+              marginTop: 28, aspectRatio: "5/3", borderRadius: "var(--radius-l)",
+              backgroundImage: "url('https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?w=1200&q=80&auto=format&fit=crop')",
+              backgroundSize: "cover", backgroundPosition: "center", border: "1px solid var(--line)",
+            }} />
             <p className="lead" style={{ marginTop: 24, maxWidth: 460 }}>
               Compila il form: ti richiamo entro 24 ore lavorative per fissare una call gratuita di 30 minuti, capire il tuo progetto e — se ha senso lavorare insieme — prepararti un preventivo scritto.
             </p>
+
 
             <ul style={{ marginTop: 48, borderTop: "1px solid var(--line)", listStyle: "none", padding: 0 }}>
               {promise.map((it) => (
