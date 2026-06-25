@@ -176,7 +176,9 @@ html, body {
   .sofy .section { padding: 76px 0; }
   .sofy .nav-links { display: none; }
   .sofy .nav-inner { height: 68px; gap: 14px; }
-  .sofy .nav .btn { display: none; }
+  .sofy .nav .nav-cta { display: none; }
+  .sofy .nav-burger { display: inline-flex; }
+
   .sofy .brand { font-size: 20px; }
   .sofy .h-display { font-size: clamp(38px, 12vw, 52px); line-height: 1.12; }
   .sofy .h-1 { font-size: clamp(31px, 9vw, 42px); line-height: 1.18; }
