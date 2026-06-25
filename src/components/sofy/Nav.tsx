@@ -1,4 +1,6 @@
 import { Link } from "@tanstack/react-router";
+import logoAsset from "@/assets/sofy-logo.png.asset.json";
+
 
 type NavItem = { to: string; label: string };
 const items: NavItem[] = [
