@@ -37,10 +37,10 @@ export function Footer() {
       <div className="container">
         <div className="footer-grid">
           <div>
-            <Link to="/" className="brand">
-              <span className="brand-mark">s</span>
-              <span>sofy <em>web design</em></span>
+            <Link to="/" className="brand brand-footer" aria-label="Sofy Web Design — home">
+              <img src={logoAsset.url} alt="Sofy Web Design" className="brand-logo brand-logo-footer" width={160} height={160} loading="lazy" />
             </Link>
+
             <p className="body" style={{ color: "rgba(251,246,241,0.7)", marginTop: 18, maxWidth: 320 }}>
               Siti WordPress moderni, curati, pensati per portare vendite e prenotazioni reali. Made with care from Italy.
             </p>
