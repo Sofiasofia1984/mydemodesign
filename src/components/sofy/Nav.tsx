@@ -14,11 +14,11 @@ export function Nav({ active }: { active: NavItem["to"] }) {
   return (
     <header className="nav">
       <div className="container nav-inner">
-        <Link to="/" className="brand">
-          <span className="brand-mark">s</span>
-          <span>sofy <em>web design</em></span>
+        <Link to="/" className="brand" aria-label="Sofy Web Design — home">
+          <img src={logoAsset.url} alt="Sofy Web Design" className="brand-logo" width={140} height={140} />
         </Link>
         <nav className="nav-links">
+
           {items.map((it) => (
             <Link key={it.to} to={it.to} className={active === it.to ? "active" : ""}>
               {it.label}
