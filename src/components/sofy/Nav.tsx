@@ -1,7 +1,5 @@
 import { Link, useRouter } from "@tanstack/react-router";
 import { useEffect, useState } from "react";
-import logoAsset from "@/assets/sofy-logo.png.asset.json";
-
 
 type NavItem = { to: string; label: string };
 const items: NavItem[] = [
@@ -32,7 +30,7 @@ export function Nav({ active }: { active: NavItem["to"] }) {
     <header className="nav">
       <div className="container nav-inner">
         <Link to="/" className="brand" aria-label="Sofy Web Design — home">
-          <img src={logoAsset.url} alt="Sofy Web Design" className="brand-logo" width={140} height={140} />
+          <img src="/sofy-logo.png" alt="Sofy Web Design" className="brand-logo" width={140} height={140} />
         </Link>
         <nav className="nav-links">
           {items.map((it) => (
@@ -93,7 +91,7 @@ export function Footer() {
         <div className="footer-grid">
           <div>
             <Link to="/" className="brand brand-footer" aria-label="Sofy Web Design — home">
-              <img src={logoAsset.url} alt="Sofy Web Design" className="brand-logo brand-logo-footer" width={160} height={160} loading="lazy" />
+              <img src="/sofy-logo.png" alt="Sofy Web Design" className="brand-logo brand-logo-footer" width={160} height={160} loading="lazy" />
             </Link>
 
             <p className="body" style={{ color: "rgba(251,246,241,0.7)", marginTop: 18, maxWidth: 320 }}>
