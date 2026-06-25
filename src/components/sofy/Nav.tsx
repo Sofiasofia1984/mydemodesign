@@ -1,4 +1,5 @@
-import { Link } from "@tanstack/react-router";
+import { Link, useRouter } from "@tanstack/react-router";
+import { useEffect, useState } from "react";
 import logoAsset from "@/assets/sofy-logo.png.asset.json";
 
 
@@ -11,6 +12,22 @@ const items: NavItem[] = [
 ];
 
 export function Nav({ active }: { active: NavItem["to"] }) {
+  const [open, setOpen] = useState(false);
+  const router = useRouter();
+
+  // Close on route change
+  useEffect(() => {
+    const unsub = router.subscribe("onResolved", () => setOpen(false));
+    return () => unsub();
+  }, [router]);
+
+  // Lock body scroll when open
+  useEffect(() => {
+    if (typeof document === "undefined") return;
+    document.body.style.overflow = open ? "hidden" : "";
+    return () => { document.body.style.overflow = ""; };
+  }, [open]);
+
   return (
     <header className="nav">
       <div className="container nav-inner">
@@ -18,14 +35,52 @@ export function Nav({ active }: { active: NavItem["to"] }) {
           <img src={logoAsset.url} alt="Sofy Web Design" className="brand-logo" width={140} height={140} />
         </Link>
         <nav className="nav-links">
-
           {items.map((it) => (
             <Link key={it.to} to={it.to} className={active === it.to ? "active" : ""}>
               {it.label}
             </Link>
           ))}
         </nav>
-        <Link to="/prenotazione" className="btn btn-primary">Richiedi preventivo</Link>
+        <Link to="/prenotazione" className="btn btn-primary nav-cta">Richiedi preventivo</Link>
+
+        <button
+          type="button"
+          className={`nav-burger ${open ? "is-open" : ""}`}
+          aria-label={open ? "Chiudi menu" : "Apri menu"}
+          aria-expanded={open}
+          aria-controls="mobile-menu"
+          onClick={() => setOpen((v) => !v)}
+        >
+          <span /><span /><span />
+        </button>
+      </div>
+
+      <div
+        id="mobile-menu"
+        className={`mobile-menu ${open ? "is-open" : ""}`}
+        role="dialog"
+        aria-modal="true"
+        aria-hidden={!open}
+      >
+        <nav className="mobile-menu-links">
+          {items.map((it) => (
+            <Link
+              key={it.to}
+              to={it.to}
+              className={active === it.to ? "active" : ""}
+              onClick={() => setOpen(false)}
+            >
+              {it.label}
+            </Link>
+          ))}
+        </nav>
+        <Link to="/prenotazione" className="btn btn-primary" onClick={() => setOpen(false)}>
+          Richiedi preventivo
+        </Link>
+        <div className="mobile-menu-contact">
+          <a href="mailto:sofisofi10123@gmail.com">sofisofi10123@gmail.com</a>
+          <a href="tel:+393501646712">+39 350 164 6712</a>
+        </div>
       </div>
     </header>
   );
