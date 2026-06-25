@@ -112,7 +112,30 @@ html, body {
 
 /* nav */
 .sofy .nav { position: sticky; top: 0; z-index: 50; background: rgba(245,233,226,0.82); backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px); border-bottom: 1px solid rgba(225,207,194,0.6); }
-.sofy .nav-inner { display: flex; align-items: center; justify-content: space-between; height: 76px; }
+.sofy .nav-inner { display: flex; align-items: center; justify-content: space-between; height: 76px; gap: 16px; }
+
+/* Hamburger — hidden on desktop, shown via media query on mobile */
+.sofy .nav-burger { display: none; align-items: center; justify-content: center; width: 44px; height: 44px; border: 1px solid var(--line); border-radius: var(--radius-pill); background: var(--cream); cursor: pointer; padding: 0; flex-direction: column; gap: 5px; transition: background 0.2s ease; flex-shrink: 0; }
+.sofy .nav-burger:hover { background: var(--bg-warm); }
+.sofy .nav-burger span { display: block; width: 18px; height: 1.5px; background: var(--espresso); border-radius: 2px; transition: transform 0.25s ease, opacity 0.2s ease; }
+.sofy .nav-burger.is-open span:nth-child(1) { transform: translateY(6.5px) rotate(45deg); }
+.sofy .nav-burger.is-open span:nth-child(2) { opacity: 0; }
+.sofy .nav-burger.is-open span:nth-child(3) { transform: translateY(-6.5px) rotate(-45deg); }
+
+/* Mobile menu panel */
+.sofy .mobile-menu { position: fixed; inset: 68px 0 0 0; z-index: 49; background: var(--bg); padding: 32px 24px 40px; display: flex; flex-direction: column; gap: 24px; transform: translateY(-12px); opacity: 0; pointer-events: none; transition: transform 0.28s ease, opacity 0.22s ease; overflow-y: auto; }
+.sofy .mobile-menu.is-open { transform: translateY(0); opacity: 1; pointer-events: auto; }
+.sofy .mobile-menu-links { display: flex; flex-direction: column; gap: 4px; border-top: 1px solid var(--line); }
+.sofy .mobile-menu-links a { font-family: var(--ff-serif); font-size: 26px; color: var(--espresso); padding: 18px 4px; border-bottom: 1px solid var(--line); text-decoration: none; transition: color 0.2s ease, padding 0.2s ease; }
+.sofy .mobile-menu-links a:hover, .sofy .mobile-menu-links a.active { color: var(--rose-deep); padding-left: 10px; }
+.sofy .mobile-menu .btn { width: 100%; justify-content: center; }
+.sofy .mobile-menu-contact { display: flex; flex-direction: column; gap: 6px; padding-top: 18px; border-top: 1px solid var(--line); font-size: 14px; color: var(--ink-soft); }
+.sofy .mobile-menu-contact a { color: var(--ink); text-decoration: none; }
+
+@media (min-width: 861px) {
+  .sofy .mobile-menu { display: none !important; }
+}
+
 .sofy .brand { display: inline-flex; align-items: center; gap: 10px; font-family: var(--ff-serif); font-size: 22px; color: var(--espresso); text-decoration: none; }
 .sofy .brand-mark { width: 30px; height: 30px; border-radius: 50%; background: linear-gradient(135deg, var(--rose) 0%, var(--cacao) 100%); display: grid; place-items: center; color: var(--cream); font-family: var(--ff-serif); font-style: italic; font-size: 16px; }
 .sofy .brand em { font-style: italic; color: var(--rose-deep); }
