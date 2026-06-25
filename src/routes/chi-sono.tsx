@@ -1,8 +1,5 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { Nav, Footer } from "@/components/sofy/Nav";
-import sofiaPortrait from "@/assets/sofia-portrait.jpg.asset.json";
-import sofia1 from "@/assets/sofia-1.jpg.asset.json";
-import sofiaNewPortrait from "@/assets/sofia-new-portrait.jpg.asset.json";
 
 export const Route = createFileRoute("/chi-sono")({
   component: ChiSonoPage,
@@ -13,7 +10,7 @@ export const Route = createFileRoute("/chi-sono")({
       { property: "og:title", content: "Chi sono — Sofy Web Design" },
       { property: "og:description", content: "Ciao, sono Sofy. Web designer WordPress per donne e professioniste." },
       { property: "og:url", content: "/chi-sono" },
-      { property: "og:image", content: sofiaNewPortrait.url },
+      { property: "og:image", content: "/sofia-new-portrait.jpg" },
     ],
     links: [{ rel: "canonical", href: "/chi-sono" }],
   }),
@@ -45,7 +42,7 @@ function ChiSonoPage() {
       <Nav active="/chi-sono" />
 
       <section className="container" style={{ padding: "80px 0 100px", display: "grid", gridTemplateColumns: "1.1fr 1fr", gap: 80, alignItems: "center" }}>
-        <div className="ph" style={{ aspectRatio: "4/5", borderRadius: "var(--radius-l)", backgroundImage: `url(${sofiaNewPortrait.url})`, backgroundPosition: "center top" }} />
+        <div className="ph" style={{ aspectRatio: "4/5", borderRadius: "var(--radius-l)", backgroundImage: `url(/sofia-new-portrait.jpg)`, backgroundPosition: "center top" }} />
         <div className="hero-anim">
           <span className="eyebrow">Chi sono</span>
           <h1 className="h-display" style={{ marginTop: 18 }}>Ciao, sono <em>Sofy</em>.</h1>
@@ -101,7 +98,7 @@ function ChiSonoPage() {
           <span className="eyebrow" style={{ color: "var(--rose)" }}>Lo studio</span>
           <h2 className="h-1" style={{ marginTop: 14, color: "var(--cream)" }}>Strumenti, <em style={{ color: "var(--rose)" }}>metodo</em>, attenzione.</h2>
           <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr 1fr", gap: 60, marginTop: 48, alignItems: "start" }}>
-            <div className="ph" style={{ aspectRatio: "4/5", borderRadius: "var(--radius-l)", backgroundImage: `url(${sofia1.url})` }} />
+            <div className="ph" style={{ aspectRatio: "4/5", borderRadius: "var(--radius-l)", backgroundImage: `url(/sofia-1.jpg)` }} />
             <div style={{ color: "rgba(251,246,241,0.78)", fontSize: 16, lineHeight: 1.75 }}>
               <p>Lavoro da casa, nello studio luminoso che mi sono costruita un angolo alla volta. Disegno su Figma, costruisco su WordPress, scrivo i miei testi a mano in un quaderno prima di portarli online.</p>
               <p style={{ marginTop: 18 }}>Credo che un sito non sia mai "tecnologia". È una conversazione tra te e la persona dall'altra parte dello schermo.</p>
