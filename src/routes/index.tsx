@@ -1,10 +1,5 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { Nav, Footer } from "@/components/sofy/Nav";
-import sofia1 from "@/assets/sofia-1.jpg.asset.json";
-import sofia2 from "@/assets/sofia-2.jpg.asset.json";
-import sofia3 from "@/assets/sofia-3.jpg.asset.json";
-import sofiaPortrait from "@/assets/sofia-portrait.jpg.asset.json";
-import sofiaNewPortrait from "@/assets/sofia-new-portrait.jpg.asset.json";
 
 export const Route = createFileRoute("/")({
   component: HomePage,
@@ -15,7 +10,7 @@ export const Route = createFileRoute("/")({
       { property: "og:title", content: "Sofy Web Design — Siti WordPress curati" },
       { property: "og:description", content: "Siti WordPress che raccontano chi sei e vendono ogni giorno." },
       { property: "og:url", content: "/" },
-      { property: "og:image", content: sofiaNewPortrait.url },
+      { property: "og:image", content: "/sofia-new-portrait.jpg" },
     ],
     links: [{ rel: "canonical", href: "/" }],
     scripts: [{
@@ -25,7 +20,7 @@ export const Route = createFileRoute("/")({
         "@type": "ProfessionalService",
         name: "Sofy Web Design",
         description: "Web design WordPress per donne e professioniste.",
-        image: sofiaPortrait.url,
+        image: "/sofia-portrait.jpg",
         areaServed: "Italia",
         serviceType: "Web design WordPress",
       }),
@@ -103,9 +98,9 @@ function HomePage() {
           </div>
 
           <div style={{ marginTop: 72, display: "grid", gridTemplateColumns: "1fr 1.2fr 1fr", gap: 24, alignItems: "center" }}>
-            <div className="ph" style={{ aspectRatio: "3/4.6", backgroundImage: `url(${sofia1.url})` }} />
-            <div className="ph" style={{ aspectRatio: "4/5.6", backgroundImage: `url(${sofiaNewPortrait.url})`, backgroundPosition: "center top" }} />
-            <div className="ph" style={{ aspectRatio: "3/4.6", backgroundImage: `url(${sofia3.url})` }} />
+            <div className="ph" style={{ aspectRatio: "3/4.6", backgroundImage: `url(/sofia-1.jpg)` }} />
+            <div className="ph" style={{ aspectRatio: "4/5.6", backgroundImage: `url(/sofia-new-portrait.jpg)`, backgroundPosition: "center top" }} />
+            <div className="ph" style={{ aspectRatio: "3/4.6", backgroundImage: `url(/sofia-3.jpg)` }} />
           </div>
         </div>
       </section>
@@ -138,7 +133,7 @@ function HomePage() {
       {/* SOLUTION */}
       <section style={{ padding: "120px 0" }}>
         <div className="container" style={{ display: "grid", gridTemplateColumns: "1.05fr 1fr", gap: 80, alignItems: "center" }}>
-          <div className="ph" style={{ aspectRatio: "5/6", backgroundImage: `url(${sofiaPortrait.url})` }} />
+          <div className="ph" style={{ aspectRatio: "5/6", backgroundImage: `url(/sofia-portrait.jpg)` }} />
           <div>
             <span className="eyebrow">La soluzione</span>
             <h2 className="h-1" style={{ marginTop: 14 }}>Un sito <em>WordPress</em> pensato come una piccola macchina di vendita.</h2>
